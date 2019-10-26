@@ -1,6 +1,5 @@
 // declare object for each node in the ground floor
 var glasgowTower = {tag:"Glasgow Tower"};
-var theShop = {};
 var toiletF0L = {tag:"Toilet0a"}; 
 var towerbase = {tag:"Glasgow Tower Base"};
 var tasteCafe = {tag:"Taste Cafe"};
