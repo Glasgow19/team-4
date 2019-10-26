@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./mapVisulisation.js"></script>
     <title>Route Planning Map</title>
 </head>
 
@@ -21,15 +22,18 @@
         border: 0;
         padding: 0;
     }
+
+    #map {
+        display: block;
+        margin: auto;
+    }
 </style>
 
 <script>
     var clickX, clickY;
 
-    console.log("Glasgow Science Center Map");
-
     $('#map').on('click', function() {
-        alert(`(${event.pageX}, ${event.pageY})`);
+        alert(`(${event.pageX - this.offsetLeft}, ${event.pageY - this.offsetTop})`);
     });
 </script>
 

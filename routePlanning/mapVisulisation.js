@@ -1,4 +1,8 @@
-[
+/*
+    This is a JSON data of all coordinates regarding to the map https://www.glasgowsciencecentre.org/sites/default/files/2018-02/1850_640_map.png;
+    Due to time reason this JSON data is put here as a constant, in reality a database can be used to store more accurate data;
+*/ 
+const MAPNODES = [
     {
         "name": "Glasgow Tower",
         "floor": 0,
@@ -49,7 +53,7 @@
     {
         "name": "Clyde Suite",
         "floor": 0,
-        "coor": { "x": 984, "y": 340 },
+        "coor": { "x": 984, "y": 340 }
     },
     {
         "name": "Coffee Pod",
@@ -215,3 +219,4 @@
         "coor": { "x": 1115, "y": 99 }
     }
 ]
+
