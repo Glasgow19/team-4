@@ -8,12 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/konva@4.0.0/konva.min.js"></script>
     <script type="text/javascript" src="./mapVisulisation.js"></script>
     <title>Route Planning Map</title>
 </head>
 
 <body>
-    <img id="map" src="https://www.glasgowsciencecentre.org/sites/default/files/2018-02/1850_640_map.png">
+    <div id="map">
+        <img id="mapimg" src="https://www.glasgowsciencecentre.org/sites/default/files/2018-02/1850_640_map.png">
+    </div>
 </body>
 
 <style>
@@ -23,7 +26,7 @@
         padding: 0;
     }
 
-    #map {
+    #mapimg {
         display: block;
         margin: auto;
     }
@@ -32,8 +35,15 @@
 <script>
     var clickX, clickY;
 
+    visualInit();
+    MAPNODES.forEach(node => {
+        visualiseNode(node);
+    });
+
     $('#map').on('click', function() {
-        alert(`(${event.pageX - this.offsetLeft}, ${event.pageY - this.offsetTop})`);
+        clickX = event.pageX - this.offsetLeft;
+        clickY = event.pageY - this.offsetTop;
+        alert(`(${clickX}, ${clickY})`);
     });
 </script>
 
