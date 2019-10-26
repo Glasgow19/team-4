@@ -1,21 +1,13 @@
-
-
-.main_body{
-
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
-}
-
 .topbar{
-  width: 100%;
-  height: 15%;
+  width: 200%;
+  height: 10%;
   background-color: #323046;
 
 }
 
 .dropbtn {
   background-color: #4CAF50;
+  height: 10%;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -25,13 +17,14 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  margin: 0 auto;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  width: 100%;
+  width: 200%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -48,27 +41,3 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-
-
-
-#header{
-  background-image: url('header.JPG');
-  background-size: cover;
-  background-attachement: fixed;
-  min-height: 600px;
-  font-size:0%
-}
-
-
-
-
-.flex-rectangle {
-       float: left;
-       margin: 0 0 0 0;
-       text-align:right;
-       width: 200%;
-       height: 20%;
-       background: #323046;
-       font-size:100%;
-    }
