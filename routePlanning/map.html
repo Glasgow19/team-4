@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/konva@4.0.0/konva.min.js"></script>
     <script type="text/javascript" src="./mapVisulisation.js"></script>
     <title>Route Planning Map</title>
 </head>
@@ -27,23 +26,32 @@
     }
 
     #mapimg {
-        display: block;
+        position: fixed;
+        display: center;
         margin: auto;
+    }
+
+    .node {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: white;
     }
 </style>
 
 <script>
     var clickX, clickY;
 
-    visualInit();
     MAPNODES.forEach(node => {
-        visualiseNode(node);
+        addNode(node);
     });
 
     $('#map').on('click', function() {
         clickX = event.pageX - this.offsetLeft;
         clickY = event.pageY - this.offsetTop;
-        alert(`(${clickX}, ${clickY})`);
+        console.log(`(${clickX}, ${clickY})`);
     });
 </script>
 
