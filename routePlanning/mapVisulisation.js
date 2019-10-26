@@ -220,24 +220,8 @@ const MAPNODES = [
     }
 ];
 
-// Map image width & height
-var imgWidth;
-var imgHeight;
-
-var stage;
-var layers;
-
-function visualInit() {
-    imgWidth = $('#mapimg').width();
-    imgHeight = $('#mapimg').height();
-
-    stage = new Konva.Stage({
-        container: 'mapimg',
-        width: imgWidth,
-        height: imgHeight
-    });
-}
-
-function visualiseNode({name, floor, coor, link}) {
-    // console.log(link);
+function addNode({name, floor, coor, link}) {
+    var autoLeftMargin = $('#mapimg').offset().left;
+    var node = `<div class="node" style="left:${coor.x+autoLeftMargin-4}px; top:${coor.y}px;"></div>`;
+    $('#map').append(node);
 }
