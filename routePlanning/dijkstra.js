@@ -37,3 +37,31 @@ var liveLab = {tag:"Live Lab"};
 
 // declaration of the list of places at the third floor
 var thirdFloor = {liveLab};
+
+// retrieve the Json object and then provide recommend list
+function recommand(text){
+    // get the test string in json form
+    // then transfer into js object
+    recommendArray = JSON.parse(text);
+
+    //initialise array for the sorted recommend list
+    sortedArray  = {};
+    for(x in groudFloor){
+        if ( x.tag === recommendArray.name) {
+            sortedArray.push(x);
+        }
+    }
+    for(y in firstFloor){
+        if ( y.tag === recommendArray.name) {
+            sortedArray.push(y);
+        }
+    }
+    for(z in secondFloor){
+        if (z.tag === recommendArray.name) {
+            sortedArray.push(z);
+        }
+    }
+
+    // then transfer the sorted json object into json string
+    return JSON.stringify(sortedArray);
+}
