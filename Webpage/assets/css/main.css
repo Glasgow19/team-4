@@ -3394,12 +3394,10 @@
 
 	#header {
 		background: rgba(0, 0, 0, 0.75);
-		height: 5em;
+		height: 4em;
 		left: 0;
-		line-height: 5em;
+		min-height: 4em;
 		position: fixed;
-		top: 0;
-		bottom: 0;
 		width: 100%;
 		z-index: 10001;
 	}
@@ -3408,6 +3406,8 @@
 			display: inline-block;
 			height: 5em;
 			left: 1.25em;
+			min-width: 400px;
+			max-width: 400px;
 			line-height: 5em;
 			margin: 0;
 			padding: 0;
