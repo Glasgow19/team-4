@@ -1,19 +1,19 @@
 // declare object for each node in the ground floor
-var glasgowTower = {tag:"Glasgow Tower",adjacent:{Towerbase},x:631, y:206};
-var toiletF0L = {tag:"Toilet0a",adjacent:{Towerbase},x:677, y:188}; 
-var towerbase = {tag:"Glasgow Tower Base",adjacent:{ToiletL1,GlasgowTower},x:677, y:213};
-var TasteCafe = {tag:"Taste Cafe",adjacent:{Towerbase,TowerEntrance},x:758,y:280};
-var towerEntrance = {tag:"Tower Entrance",adjacent:{TasteCafe},x:819,y:324};
-var theEgg = {tag:"",adjacent:{}}
-var elevator0L = {};
-var stairF0F1 = {};
-var clydeSlite = {};
-var auditorium = {};
-var cloakRoom = {};
-var ticketDesk = {};
-var artium = {};
-var toiletF0R = {};
-var elevatorF0R = {};
+var glasgowTower = {tag:"Glasgow Tower",adjacent:{towerbase},x:631, y:206};
+var toiletF0L = {tag:"Toilet0a",adjacent:{towerbase},x:677, y:188}; 
+var towerbase = {tag:"Glasgow Tower Base",adjacent:{toiletL1,glasgowTower},x:677, y:213};
+var tasteCafe = {tag:"Taste Cafe",adjacent:{towerbase,towerEntrance},x:758,y:280};
+var towerEntrance = {tag:"Tower Entrance",adjacent:{tasteCafe,theEgg},x:819,y:324};
+var theEgg = {tag:"",adjacent:{tasteCafe,elevator0L,towerEntrance}}
+var elevator0L = {adjacent:{theEgg,toiletF0R}};
+var stairF0F1 = {adjacent:{toiletF0R,clydeSlite}};
+var clydeSlite = {adjacent:{cloakRoom,auditorium}};
+var auditorium = {adjacent:{cloakRoom,clydeSlite}};
+var cloakRoom = {adjacent:{auditorium,clydeSlite,elevatorF0R}};
+var ticketDesk = {adjacent:{cloakRoom,artium,elevatorF0R}};
+var artium = {adjacent:{ticketDesk}};
+var toiletF0R = {adjacent:{elevator0L,stairF0F1,clydeSlite}};
+var elevatorF0R = {adjacent:{cloakRoom,ticketDesk}};
 
 // delearation of the variable at the first floor
 var stairF1F2 = {};
