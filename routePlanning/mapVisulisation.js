@@ -109,7 +109,7 @@ const MAPNODES = [
     {
         "name": "Entrance",
         "floor": 0,
-        "coor": { "x": 1282, "y": 434 }
+        "coor": { "x": 1282, "y": 432 }
     },
 
     {
@@ -221,7 +221,8 @@ const MAPNODES = [
 ];
 
 function addNode({name, floor, coor, link}) {
-    var autoLeftMargin = $('#mapimg').offset().left;
-    var node = `<div class="node" style="left:${coor.x+autoLeftMargin-4}px; top:${coor.y}px;"></div>`;
+    // var autoLeftMargin = $('#mapimg').offset().left;
+    var node = `<div class="node" style="left:${coor.x+leftmargin-3}px; top:${coor.y}px;"></div>`;
+    
     $('#map').append(node);
 }
