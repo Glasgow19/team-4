@@ -25,9 +25,12 @@
         padding: 0;
     }
 
+    #map {
+        margin-left: 35px;
+    }
+
     #mapimg {
         position: fixed;
-        display: center;
         margin: auto;
     }
 
@@ -44,9 +47,7 @@
 <script>
     var clickX, clickY;
 
-    MAPNODES.forEach(node => {
-        addNode(node);
-    });
+    MAPNODES.forEach(node => addNode(node));
 
     $('#map').on('click', function() {
         clickX = event.pageX - this.offsetLeft;
