@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./mapVisulisation.js"></script>
     <title>Route Planning Map</title>
 </head>
 
 <body>
-    <img id="map" src="https://www.glasgowsciencecentre.org/sites/default/files/2018-02/1850_640_map.png">
+    <div id="map">
+        <img id="mapimg" src="https://www.glasgowsciencecentre.org/sites/default/files/2018-02/1850_640_map.png">
+    </div>
 </body>
 
 <style>
@@ -21,15 +24,34 @@
         border: 0;
         padding: 0;
     }
+
+    #mapimg {
+        position: fixed;
+        display: center;
+        margin: auto;
+    }
+
+    .node {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: white;
+    }
 </style>
 
 <script>
     var clickX, clickY;
 
-    console.log("Glasgow Science Center Map");
+    MAPNODES.forEach(node => {
+        addNode(node);
+    });
 
     $('#map').on('click', function() {
-        alert(`(${event.pageX}, ${event.pageY})`);
+        clickX = event.pageX - this.offsetLeft;
+        clickY = event.pageY - this.offsetTop;
+        console.log(`(${clickX}, ${clickY})`);
     });
 </script>
 
