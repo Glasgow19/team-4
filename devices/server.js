@@ -5,7 +5,8 @@ var mysql      = require('mysql');
 
 var connection = mysql.createConnection({
     user: 'root',
-    password: 'password'
+    password: 'password',
+    database: 'Devices_system'
 });
 
 connection.connect(function(err) {
@@ -17,8 +18,7 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 });
 
-//./require('/router.js')(app, connection);
-
+require('./router.js')(app, connection);
 
 app.get('/',function(req,res)
 {
