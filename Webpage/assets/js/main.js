@@ -157,6 +157,10 @@
 					return $header.height() - 2;
 				}
 			});
+			
+			$('#visualisation')
+				.css('width', "1850px")
+				.css('height', "640px");
 
 	});
 
