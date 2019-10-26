@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Route Planning Map</title>
+</head>
+
+<body>
+    <img id="map" src="https://www.glasgowsciencecentre.org/sites/default/files/2018-02/1850_640_map.png">
+</body>
+
+<style>
+    body {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    #map {
+        width: 100%;
+    }
+</style>
+
+<script>
+    var clickX, clickY;
+
+    console.log("Glasgow Science Center Map");
+
+    $('#map').on('click', function() {
+        alert(`(${event.pageX}, ${event.pageY})`);
+    });
+</script>
+
+</html>
