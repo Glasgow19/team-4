@@ -14,8 +14,3 @@ var Restaurant = {tag:"Restaurant",adjacent:{TasteCafe}};
 function getDistance(objA,objB){
     return Math.sqrt(Math.pow(objA.x - objB.x,2) + Math.pow(objA.y - objB.y));
 }
-
-
-function getlist(list){
-
-}
