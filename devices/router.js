@@ -37,6 +37,7 @@ module.exports = (app, connection) => {
 
           if(err) throw err;
 
+          //Maybe the system could tell the user how many devices left
           console.log(results);
     });}
 
@@ -49,6 +50,7 @@ module.exports = (app, connection) => {
 
         if(err) throw err;
 
+        //Maybe update the state of devices
         console.log(results);
       });}
   }

@@ -31,7 +31,7 @@ require('./router.js')(app, connection);
 
 app.get('/',function(req,res)
 {
-res.send("Hllo")
+res.send("Hello")
 });
 
 
