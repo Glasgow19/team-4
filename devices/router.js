@@ -6,7 +6,7 @@ module.exports = (app, connection) => {
 
     function find_availability (req, res) {
       let device = req.body.device_borrowed;
-      connection.query('SELECT * FROM `devices` WHERE Type_of_Devices = "'+ device+'"', function (err, results, fields) {
+      connection.query('SELECT * FROM Devices WHERE Type_of_Devices = "'+ device+'"', function (err, results, fields) {
         // error will be an Error if one occurred during the query
         // results will contain the results of the query
         // fields will contain information about the returned results fields (if any)
@@ -20,14 +20,24 @@ module.exports = (app, connection) => {
 });}
 
     function book_device (req, res) {
-      connection.query('', function (err, results, fields) {
+      let device = req.body.device_borrowed;
+      connection.query('UPDATE Devices SET Number_of_Available = Number_of_Available - 1 , Number_of_times_borrowed = Number_of_times_borrowed + 1 FROM Devices WHERE  Type_of_Devices = "'+ device +'"' ,function(err, results, fields){
 
       if(err) throw err;
 
-      console.log(results);
-});}
-
+      if (results[0].Number_of_Available > 0) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+        console.log(results);
+    });}
     function return_device (req, res) {
+      let device = req.body.device_borrowed;
+      connection.query('UPDATE Devices SET Number_of_Available = Number_of_Available + 1 , Number_of_times_borrowed = Number_of_times_borrowed - 1 FROM Devices WHERE  Type_of_Devices = "'+ device +'"' ,function(err, results, fields){
 
-    }
-}
+        if(err) throw err;
+  
+        console.log(results);
+      });}
+  }
