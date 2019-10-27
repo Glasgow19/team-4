@@ -1,14 +1,17 @@
 window.onload = function(e){     
-	var img_obj_list = document.getElementsByTagName('img');
-	// x= img_list
-	var img_list = arrange_img(img_obj_list)
-	var socket = io("ws://localhost:8000/");
-	socket.emit('send_img', img_list);
-	
-	socket.on('update_alt', function(data){
-		// console.log(data)
-		refresh_img(img_obj_list,data)
+	$('.vis').click(function(e) {
+		alert("Click")
+		var img_obj_list = document.getElementsByTagName('img');
+		// x= img_list
+		var img_list = arrange_img(img_obj_list)
+		var socket = io("ws://localhost:8000/");
+		socket.emit('send_img', img_list);
+		
+		socket.on('update_alt', function(data){
+			// console.log(data)
+			refresh_img(img_obj_list,data)
 
+		});
 	})
 
 }
