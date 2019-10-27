@@ -216,13 +216,55 @@ const MAPNODES = [
     {
         "name": "Toilet3",
         "floor": 3,
-        "coor": { "x": 1115, "y": 99 }
+        "coor": { "x": 1079, "y": 111 }
+    },
+    {
+        "name": "Lift3b",
+        "floor": 3,
+        "coor": { "x": 1115, "y": 99 },
+        "link": ["Lift0b", "Lift1b", "Lift2b"]
     }
 ];
 
+function visualInit() {
+    MAPNODES.forEach(node => addNode(node));
+}
+
 function addNode({name, floor, coor, link}) {
-    // var autoLeftMargin = $('#mapimg').offset().left;
-    var node = `<div class="node" style="left:${coor.x+leftmargin-3}px; top:${coor.y}px;"></div>`;
+    let node = `<div class="node" id="${name.replace(/\s/g, '')}" style="left:${coor.x+leftmargin-3}px; top:${coor.y}px;"></div>`;
     
     $('#map').append(node);
+}
+
+function linkNodes(names) {
+    if(names[0] !== 'Entrance') names.unshift('Entrance');
+
+    // Link back-end to sort the array
+    let sortedNames = names;
+
+    if(sortedNames.length <= 1) return;
+    
+    $(`#${sortedNames[0].replace(/\s/g, '')}`).css('background-color', 'red');
+    for(var i = 0; i < sortedNames.length - 1; i++) {
+        let coor1 = findCoor(sortedNames[i]);
+        let coor2 = findCoor(sortedNames[i+1]);
+
+        let angle = Math.atan2(coor2.y-coor1.y, coor2.x-coor1.x) * 180 / Math.PI;
+        let length = Math.sqrt((coor1.x-coor2.x) * (coor1.x-coor2.x) + (coor1.y-coor2.y) * (coor1.y-coor2.y));
+
+        let link = `<div class="line" style="
+            -webkit-transform: rotate(${angle}deg); 
+            width:${length}px; 
+            left: ${coor1.x+leftmargin}px;
+            top: ${coor1.y+3}px;">`;
+        $('#map').append(link);
+
+        $(`#${sortedNames[i+1].replace(/\s/g, '')}`).css('background-color', 'red');
+    }
+}
+
+function findCoor(name) {
+    return MAPNODES.find(function(node) {
+        return node.name.replace(/\s/g, '') === name;
+    }).coor;
 }
