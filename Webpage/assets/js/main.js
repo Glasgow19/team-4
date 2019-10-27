@@ -163,6 +163,10 @@
 				.css('height', $(window).height()+"px");
 			$('#map')
 				.css('margin-left', '0px');
+		
+		// Scoket
+		var socket = io('ws://localhost:8000');
+		socket.emit('send_img', 'HelloWorld');
 
 	});
 
