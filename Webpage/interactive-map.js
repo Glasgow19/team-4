@@ -18,3 +18,19 @@ $(document).ready(function() {
     });
   });
 });
+
+
+
+var url = "database.csv";
+
+var request = new XMLHttpRequest();
+request.open("GET", url, false);
+request.send(null);
+
+var csvData = new Array();
+var jsonObject = request.responseText.split(/\r?\n|\r/);
+for (var i = 0; i < jsonObject.length; i++) {
+  csvData.push(jsonObject[i].split(','));
+}
+// Retrived data from csv file content
+console.log(csvData);
