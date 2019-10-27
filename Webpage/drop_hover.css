@@ -6,11 +6,12 @@
 }
 
 .dropbtn {
+
   background-color: #323046;
-  height: 10%;
+  height: 50px;
   color: white;
-  padding: 16px;
-  font-size: 16px;
+  padding: 0px;
+  font-size: 15px;
   border: none;
 }
 
@@ -24,14 +25,14 @@
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  width: 200%;
+  width: 400%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 8px 8px;
   text-decoration: none;
   display: block;
 }

@@ -157,7 +157,7 @@
 					return $header.height() - 2;
 				}
 			});
-			
+
 			$('#visualisation')
 				.css('width', $(window).width()+"px")
 				.css('height', $(window).height()+"px");
