@@ -159,8 +159,10 @@
 			});
 
 			$('#visualisation')
-				.css('width', "1850px")
-				.css('height', "640px");
+				.css('width', $(window).width()+"px")
+				.css('height', $(window).height()+"px");
+			$('#map')
+				.css('margin-left', '0px');
 
 	});
 

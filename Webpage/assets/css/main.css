@@ -3346,7 +3346,7 @@
 
 	@-moz-keyframes reveal-header {
 		0% {
-			top: -4em;
+			top: 0;
 			opacity: 0;
 		}
 
@@ -3358,7 +3358,7 @@
 
 	@-webkit-keyframes reveal-header {
 		0% {
-			top: -4em;
+			top: 0;
 			opacity: 0;
 		}
 
@@ -3370,7 +3370,7 @@
 
 	@-ms-keyframes reveal-header {
 		0% {
-			top: -4em;
+			top: 0;
 			opacity: 0;
 		}
 
@@ -3382,7 +3382,7 @@
 
 	@keyframes reveal-header {
 		0% {
-			top: -4em;
+			top: 0;
 			opacity: 0;
 		}
 
@@ -3394,23 +3394,21 @@
 
 	#header {
 		background: rgba(0, 0, 0, 0.75);
-		color: #aed6f1;
-		cursor: default;
-		height: 5em;
+		height: 4em;
 		left: 0;
-		line-height: 5em;
+		min-height: 4em;
 		position: fixed;
-		text-align: right;
-		top: 0;
 		width: 100%;
 		z-index: 10001;
 	}
 
 		#header > .logo {
 			display: inline-block;
-			height: inherit;
+			height: 5em;
 			left: 1.25em;
-			line-height: inherit;
+			min-width: 400px;
+			max-width: 400px;
+			line-height: 5em;
 			margin: 0;
 			padding: 0;
 			position: absolute;

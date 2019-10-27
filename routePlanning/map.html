@@ -25,17 +25,13 @@
         padding: 0;
     }
 
-    #map {
-        margin-left: 35px;
-    }
-
     #mapimg {
         position: fixed;
         margin: auto;
     }
 
     .node {
-        position: absolute;
+        position: fixed;
         width: 5px;
         height: 5px;
         border: 2px solid black;
@@ -46,8 +42,13 @@
 
 <script>
     var clickX, clickY;
+    var leftmargin = $(window).width() < 1850 
+        ? (window.outerWidth - 1850) / 2
+        : ($(window).width() - 1850) / 2;
 
     MAPNODES.forEach(node => addNode(node));
+
+    $('#map').css('margin-left', leftmargin+'px');
 
     $('#map').on('click', function() {
         clickX = event.pageX - this.offsetLeft;
