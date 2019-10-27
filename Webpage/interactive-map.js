@@ -1,3 +1,8 @@
+
+
+
+
+
 $(document).ready(function() {
   var city, map;
   map = $('.ct-map');
@@ -20,6 +25,11 @@ $(document).ready(function() {
 });
 
 
+d3.csv("database.csv").then(function(data) {
+  console.log(data[0]);
+});
+
+data
 
 var url = "database.csv";
 
