@@ -1,7 +1,7 @@
 var express=require('express');
 var app=express();
 
-var mysql      = require('mysql');
+var mysql = require('mysql');
 
 const bodyParser = require('body-parser');
 
@@ -31,8 +31,10 @@ require('./router.js')(app, connection);
 
 app.get('/',function(req,res)
 {
-res.send('Hello World!');
+res.send("Hllo")
 });
+
+
 
 var server=app.listen(3000,function() {
   console.log("Successfully connected to the server")
