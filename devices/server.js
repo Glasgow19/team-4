@@ -3,6 +3,15 @@ var app=express();
 
 var mysql      = require('mysql');
 
+const bodyParser = require('body-parser');
+
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser({limit: '50mb'}));
+
+// parse requests of content-type - application/json
+app.use(bodyParser.json());
+
 var connection = mysql.createConnection({
     user: 'root',
     password: 'password',
@@ -27,9 +36,4 @@ res.send('Hello World!');
 
 var server=app.listen(3000,function() {
   console.log("Successfully connected to the server")
-});
-
-connection.end(function(err) {
-  // The connection is terminated now
-  console.log('MySQL database connection disconnected');
 });
