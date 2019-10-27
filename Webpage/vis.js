@@ -1,6 +1,5 @@
 window.onload = function(e){     
 	$('.vis').click(function(e) {
-		alert("Click")
 		var img_obj_list = document.getElementsByTagName('img');
 		// x= img_list
 		var img_list = arrange_img(img_obj_list)
@@ -10,7 +9,7 @@ window.onload = function(e){
 		socket.on('update_alt', function(data){
 			// console.log(data)
 			refresh_img(img_obj_list,data)
-
+			alert("Image has been analysed");
 		});
 	})
 
