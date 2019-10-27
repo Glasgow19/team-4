@@ -14,7 +14,8 @@
 		    $(function() {
 		        $('#abilityselector').change(function(){
 		            $('.ab').hide();
-		            $('#' + $(this).val()).show();
+					$('#' + $(this).val()).show();
+					localStorage.setItem('access', this.value);
 		        });
 		    });
 

@@ -240,14 +240,14 @@ function linkNodes(names) {
     if(names[0] !== 'Entrance') names.unshift('Entrance');
 
     // Link back-end to sort the array
-    let sortedNames = names;
+    console.log(names);
 
-    if(sortedNames.length <= 1) return;
+    if(names.length <= 1) return;
     
-    $(`#${sortedNames[0].replace(/\s/g, '')}`).css('background-color', 'red');
-    for(var i = 0; i < sortedNames.length - 1; i++) {
-        let coor1 = findCoor(sortedNames[i]);
-        let coor2 = findCoor(sortedNames[i+1]);
+    $(`#${names[0].replace(/\s/g, '')}`).css('background-color', 'red');
+    for(var i = 0; i < names.length - 1; i++) {
+        let coor1 = findCoor(names[i]);
+        let coor2 = findCoor(names[i+1]);
 
         let angle = Math.atan2(coor2.y-coor1.y, coor2.x-coor1.x) * 180 / Math.PI;
         let length = Math.sqrt((coor1.x-coor2.x) * (coor1.x-coor2.x) + (coor1.y-coor2.y) * (coor1.y-coor2.y));
@@ -259,7 +259,7 @@ function linkNodes(names) {
             top: ${coor1.y+3}px;">`;
         $('#map').append(link);
 
-        $(`#${sortedNames[i+1].replace(/\s/g, '')}`).css('background-color', 'red');
+        $(`#${names[i+1].replace(/\s/g, '')}`).css('background-color', 'red');
     }
 }
 
@@ -267,4 +267,9 @@ function findCoor(name) {
     return MAPNODES.find(function(node) {
         return node.name.replace(/\s/g, '') === name;
     }).coor;
+}
+
+function clearLinks() {
+    $('.node').remove();
+    $('.line').remove();
 }
