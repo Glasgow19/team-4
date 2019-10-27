@@ -19,7 +19,7 @@
 		    });
 
 </script>
-
+<!--
 <style>
 /*the container must be positioned relative:*/
 .custom-select {
@@ -81,9 +81,10 @@
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+-->
 </style>
 
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script> 
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 
 	</head>
 	<body>
@@ -146,7 +147,7 @@
 											<option value="autism">Autism</option>
 										</Select>-->
 
-										<div class="custom-select" style="width:200px;">
+										<div style="width:200px;">
 										  <Select id="abilityselector">
 										    <option value="0">Adapt for:</option>
 												<option value="1">Visual impairment</option>
@@ -253,7 +254,7 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
+		<!--	<script>
 var x, i, j, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
@@ -327,7 +328,7 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
-</script>
+</script> -->
 
 	</body>
 </html>
